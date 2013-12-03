@@ -18,20 +18,30 @@ body {
 .nav {
     height: 55px;
     background-color: #F1F1F1;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #E1E1E1;
 }
 
 .action {
     height: 45px;
     background-color: #FFFFFF;
-    border: 1px solid #D3D3D3;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #DFDFDF;
 }
 
 .action-menu {
     width: 220px;
     float: left;
-    padding-left: 30px;
-    padding-top: 10px;
     color: red;
+    line-height: 45px;
+    padding-left: 40px;
+}
+
+.action-operation {
+    float: left;
+    line-height: 45px;
 }
 
 .body {
@@ -44,6 +54,11 @@ body {
     width: 220px;
     float: left;
     padding-left: 30px;
+}
+
+.menu-item {
+    margin: 10px auto 10px auto;
+    padding: 5px 5px 5px 10px;
 }
 
 .content {
