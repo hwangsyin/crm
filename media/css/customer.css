@@ -1,0 +1,34 @@
+.customer-list {
+    margin: 0 auto 500px auto;
+    padding: 0;
+    width: 600px;
+    height: 5px;
+	/*border: 1px solid red;*/
+	position: relative;
+	top: 70px;
+}
+.customer {
+	margin: auto auto 30px auto;
+	padding: 0;
+	border: 1px solid #D3D3D3;
+	height: 200px;
+	background-color: #FFFFFF;
+	box-shadow: 0 0 3px 3px #E9E9E9;
+	border-radius: 4px;
+	color: #404040;
+	font: normal 13px Robot,arial,sans-serif;
+}
+
+.customer-info {
+	height: 170px;
+	padding: 5px;
+}
+.customer-info-entry {
+	margin: 5px auto 5px auto;
+}
+
+.customer-action {
+	border-top-color: #D3D3D3;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
