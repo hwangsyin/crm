@@ -11,19 +11,18 @@ class Customer:
         self.start_time = None
         self.end_time = None
 
-    def to_doc(self):
-        doc = {}
-        doc["id"] = self.id
-        doc["title"] = self.title
-        doc["name"] = self.name
-        doc["age"] = self.age
-        doc["phone"] = self.phone
-        doc["email"] = self.email
-        doc["address"] = self.address
-        doc["start_time"] = self.start_time
-        doc["end_time"] = self.end_time
-
-        return doc
+    def __init__(self, customer_doc):
+        if not customer_doc:
+            return None
+        try:
+            self.id = customer_doc["id"]
+            self.title = customer_doc["title"]
+            self.name = customer_doc["name"]
+            self.age = customer_doc["age"]
+            self.email = customer_doc["email"]
+            self.address = customer_doc["address"]
+        except KeyError:
+            pass
 
     def spec(self):
         result = {}

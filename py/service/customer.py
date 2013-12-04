@@ -4,6 +4,7 @@ import environment
 import pymongo
 
 from service import db
+from domains import Customer
 
 # 客户管理
 class CustomerService:
@@ -25,9 +26,7 @@ class CustomerService:
         spec = None
         if customer_spec:
             spec = customer_spec.spec()
-        print(spec)
-        print(skip)
-        print(limit)
         cc = db["customer"].find(spec, {"_id": False}) \
             .sort("start_time", pymongo.DESCENDING).skip(skip).limit(limit)
-        return list(cc)
+        customers = [Customer(c_doc) for c_doc in cc]
+        return customers
