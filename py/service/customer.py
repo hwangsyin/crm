@@ -58,4 +58,4 @@ class CustomerService:
             customer_doc["type"] = customer_type_doc_cursor[0]
 
         return Customer(customer_doc)
-
+    
