@@ -12,7 +12,7 @@ settings_app = {
     "app_py_dir": os.path.join(app_home_dir, "py"),
     "app_lib_dir": os.path.join(app_home_dir, "lib"),
     "static_file_dir": os.path.join(app_home_dir, "media"),
-    "db_url": "mongodb://localhost:27017",
+    "db_url": "mongodb://10.1.240.58:27017",
     "index_page": "index.html",
     "page_size": 20,
     "db_name": "crm"

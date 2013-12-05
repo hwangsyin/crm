@@ -11,4 +11,6 @@ from service import customer_service
 
 page_no = 1
 customers = customer_service.find_page(1)
-print(customers)
+
+customer = customer_service.find(1)
+print(customer.type.repr_json())

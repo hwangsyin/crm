@@ -13,5 +13,6 @@ handlers = [
     (r"/", handlers.IndexHandler),
     (r"/customers", CustomerHandler),
     (r"/customers/add", handlers.AddCustomerHandler),
-    (r"/customers[/](.*)", handlers.CustomerHandler)
+    (r"/customers/(.*)", handlers.CustomerHandler),
+    (r"/sessions", CustomerHandler)
 ]
