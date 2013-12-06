@@ -1,14 +1,15 @@
 .customer-list {
-    font-size: 0px;
+    padding: 5px;
+    margin: 0;
+    font-size: 15px;
 }
 
 .customer {
-	margin: 5px;
+	margin: 0;
 	padding: 0;
     /*border: 1px solid black;*/
     line-height: 30px;
     vertical-align: middle;
-    font-size: 16px;
 }
 
 .customer-field {
@@ -44,5 +45,18 @@
     width: 200px;
 }
 .cf-stime {
-    width: 120px;
+    width: 200px;
+}
+
+.customer-info {
+    border: 1px solid black;
+    margin: 1px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.customer-info-field {
+    border: 1px solid blue;
+    margin: 10px auto 10px auto;
+    padding: 0;
 }

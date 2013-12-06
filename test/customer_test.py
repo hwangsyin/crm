@@ -9,8 +9,11 @@ import environment
 
 from service import customer_service
 
-page_no = 1
-customers = customer_service.find_page(1)
+page_num = 1
+customers = customer_service.find_page(page_num)
 
-customer = customer_service.find(1)
+customer_id = 2
+customer = customer_service.find(customer_id)
+print(customer.phone)
+
 print(customer.type.repr_json())

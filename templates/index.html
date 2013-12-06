@@ -13,12 +13,13 @@
             <div class="nav">nav</div>
             <div class="action">
                 <div class="action-menu">CRM</div>
-                <div class="action-operation">操作</div>
+                <div class="action-operation" id="operation-bar">操作</div>
             </div>
         </div>
         <div class="body">
             <div class="menu" id="menu">
-                <p class="menu-item" data-href="/customers" id="mi-customer">客户</p>
+                <p class="menu-item" data-href="/customers"
+                id="mi-customer">客户</p>
                 <p class="menu-item" data-href="/sessions" id="mi-session">会话</p>
             </div>
             <div class="content" id="content">
@@ -26,7 +27,7 @@
             </div>
             <script type="text/javascript">
                 var _contentE = document.getElementById("content");
-                _contentE.style.width = (screen.availWidth - 220) + "px";
+                _contentE.style.width = (screen.availWidth - 200) + "px";
                 _contentE.style.height = (screen.availHeight - 100 - 70) + "px";
             </script>
         </div>

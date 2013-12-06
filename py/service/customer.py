@@ -45,7 +45,7 @@ class CustomerService:
     def find(self, id):
         if not id:
             return None
-
+        
         customer_doc_cursor = db["customer"].find({"id": id}, {"_id": False})
         if not customer_doc_cursor or customer_doc_cursor.count() != 1:
             return None

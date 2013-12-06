@@ -3,18 +3,63 @@ class Customer:
     def __init__(self, customer_doc):
         if not customer_doc:
             return None
+
         try:
             self.id = customer_doc["id"]
+        except KeyError:
+            self.id = ""
+        try:
             self.title = customer_doc["title"]
+        except KeyError:
+            self.title = ""
+        try:
             self.name = customer_doc["name"]
+        except KeyError:
+            self.name = ""
+        try:
             self.age = customer_doc["age"]
+        except KeyError:
+            self.age = ""
+        try:
             self.email = customer_doc["email"]
+        except KeyError:
+            self.email = ""
+        try:
             self.address = customer_doc["address"]
+        except KeyError:
+            self.address =""
+        try: 
             self.phone = [ number["number"] for number in customer_doc["phone"] ] if customer_doc["phone"] else ""
+        except KeyError:
+            self.phone = []
+        try:
             self.start_time = customer_doc["start_time"]
+        except KeyError:
+            self.start_time = None
+        try:
+            self.end_time = customer_doc["end_time"]
+        except KeyError:
+            self.end_time = None
+        try:
+            self.enable = customer_doc["enable"]
+        except KeyError:
+            self.enable = None
+        try:
             self.type = CustomerType(customer_doc["type"])
         except KeyError:
-            pass
+            self.type = None
+
+    def phone_str_html(self):
+        if not self.phone:
+            return ""
+        else:
+            p_str = []
+            length = len(self.phone)
+            for i in range(length):
+                p_str.append(self.phone[i])
+                if i < length - 1:
+                    p_str.append(",&nbsp;")
+            return "".join(p_str)
 
     def spec(self):
         if not self:
@@ -32,7 +77,7 @@ class Customer:
             result["email"] = {"$regex": "/" + self.email + "/"}
 
         return result
-
+    
     def html_phone(self):
         if self.phone:
             result = ["电话:<br/>"]
