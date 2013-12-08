@@ -1,15 +1,24 @@
 .customer-list {
-    padding: 5px;
-    margin: 0;
-    font-size: 15px;
+    /*border: 1px solid black;*/
+    margin: 10px 1px auto 10px;
+    padding: 0;
+    font-size: 87.5%;
+    font-weight: bold;
+    color: #222222;
 }
 
 .customer {
+    /*border: 1px solid black;*/
 	margin: 0;
 	padding: 0;
-    /*border: 1px solid black;*/
-    line-height: 30px;
+    line-height: 45px;
     vertical-align: middle;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #D3D3D3;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #D3D3D3;
 }
 
 .customer-field {
@@ -59,4 +68,37 @@
     border: 1px solid blue;
     margin: 10px auto 10px auto;
     padding: 0;
+}
+
+.customer-add {
+    margin: 20px 1px auto auto;
+    border: 1px solid #D3D3D3;
+}
+
+.customer-add-title {
+    border: 1px solid black;
+    margin: 0 0 0 200px;
+    font-size: 20px;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.c-mo {
+    cursor: pointer;
+    background-color: #FFFFCC;
+}
+
+.ca-f {
+    margin: 30px auto 50px auto;
+    width: 600px
+}
+
+.ca-f-l {
+    display: inline-block;
+    border: 1px solid blue;
+
+    width: 100px;
 }

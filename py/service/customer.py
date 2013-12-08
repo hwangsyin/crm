@@ -1,6 +1,7 @@
 import settings
 import environment
 
+from datetime import datetime
 import pymongo
 
 from service import db
@@ -8,6 +9,23 @@ from domains import Customer
 
 # 客户管理
 class CustomerService:
+
+    def add(self, customer):
+        if not customer:
+            return None
+        customer_id_cursor = db["customer"].find(None, {"_id": False, "id":True}) \
+                .sort("id", pymongo.DESCENDING).limit(1)
+        if customer_id_cursor.count() < 1:
+            return None
+
+        max_customer_id = customer_id_cursor[0]["id"]
+        customer_id = max_customer_id + 1
+        customer.id = customer_id
+        customer.start_time = datetime.now()
+        customer.end_time = None
+        db["customer"].insert(customer.doc())
+
+        return customer_id
 
     """ 分页查询客户 """
     def find_page(self, page_num = 1, page_size = settings.settings_app["page_size"], customer_spec = None):
@@ -28,15 +46,11 @@ class CustomerService:
         spec = None if not customer_spec else customer_spec.spec()
         cc = db["customer"].find(spec, {"_id": False}) \
             .sort("start_time", pymongo.DESCENDING).skip(skip).limit(limit)
-        ct = db["customer_type"].find()
-        customer_type_map = {}
-        for cus_t in ct:
-            customer_type_map[cus_t["key"]] = cus_t
+
+        customer_type_map = self.__customer_type__(doc = True)
         customers = []
-        type = None
         for c_doc in cc:
-            type = c_doc["type"]
-            c_doc["type"] = customer_type_map[type]
+            c_doc["type"] = customer_type_map[c_doc["type"]]
             customers.append(Customer(c_doc))
 
         return customers
@@ -58,4 +72,13 @@ class CustomerService:
             customer_doc["type"] = customer_type_doc_cursor[0]
 
         return Customer(customer_doc)
-    
+
+    def __customer_type__(self, doc):
+        result = {}
+
+        customer_type_cursor = db["customer_type"].find(None, {"_id": False})
+        if customer_type_cursor.count() > 0:
+            for customer_type_doc in customer_type_cursor:
+                result[customer_type_doc["key"]] = customer_type_doc if doc else CustomerType(customer_type_doc)
+
+        return result

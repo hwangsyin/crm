@@ -34,9 +34,11 @@ body {
 .action-menu {
     width: 220px;
     float: left;
-    color: red;
+    color: #DD4B39;
     line-height: 45px;
     padding-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .action-operation {
@@ -53,20 +55,38 @@ body {
 }
 
 .menu {
+    margin: 5px auto auto auto;
     width: 200px;
     float: left;
 }
 
 .menu-item {
-    font-size: 15px;
-    font-family: sans-serif;
-    height: 25px;
-    line-height: 25px;
+    /* 15px */
+    font-size: 87.5%;
+    font-family: arial, sans-serif;
+    /*height: 30px;*/
+    line-height: 30px;
     margin: 5px auto 5px 0;
-    border-left-width: 5px;
+    border-left-width: 4px;
     border-left-style: solid;
     border-left-color: #FFFFFF;
     padding-left: 35px;
+}
+
+.mi-button {
+    margin: 5px auto 5px 35px;
+    padding: 0;
+    border: 1px solid #DD4B39;
+    border-radius: 3px;
+    line-height: 28px;
+    width: 110px;
+    background-color: #DD4B39;
+    color: #FFFFFF;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
 }
 
 .content {

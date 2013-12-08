@@ -6,7 +6,9 @@
         <link rel="stylesheet" type="text/css" href="/media/css/common.css" />
         <link rel="stylesheet" type="text/css" href="/media/css/index.css" />
         <link rel="stylesheet" type="text/css" href="/media/css/customer.css" />
-	<script type="text/javascript" src="/media/js/main.js"></script>
+
+        <script type="text/javascript" src="media/js/jquery-2.0.3.min.js"></script>
+	    <script type="text/javascript" src="/media/js/main.js"></script>
     </head>
     <body>
         <div class="tool-bar">
@@ -18,9 +20,10 @@
         </div>
         <div class="body">
             <div class="menu" id="menu">
-                <p class="menu-item" data-href="/customers"
-                id="mi-customer">客户</p>
-                <p class="menu-item" data-href="/sessions" id="mi-session">会话</p>
+                <p class="mi-button" data-type="button" data-href="/customers/add" data-container="content" data-callback="onLoadAddCustomerUI">+&nbsp;客户</p>
+                <p class="mi-button" data-type="button" data-href="/sessions/add" data-container="content" data-callback="onLoadAddSessionUI">+&nbsp;会话</p>
+                <p class="menu-item" data-type="text" data-href="/customers" id="mi-customer" data-container="content" data-callback="onLoadCustomerList">客户</p>
+                <p class="menu-item" data-type="text" data-href="/sessions" id="mi-session" data-container="content" data-callback="onLoadSessionList">会话</p>
             </div>
             <div class="content" id="content">
                 首页
